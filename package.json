@@ -1,0 +1,30 @@
+{
+  "name": "e-commerce-store",
+  "version": "1.0.0",
+  "description": "MERN e-commerce store",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramos07/React-Node-E-Commerce-Store.git"
+  },
+  "author": "Ricardo Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramos07/React-Node-E-Commerce-Store/issues"
+  },
+  "homepage": "https://github.com/ramos07/React-Node-E-Commerce-Store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
