@@ -15,6 +15,7 @@ import LoginScreen from './screens/Login'
 import RegisterScreen from './screens/Register'
 import ProfileScreen from './screens/Profile'
 import ShippingScreen from './screens/Shipping'
+import PaymentScreen from './screens/Payment'
 
 // History
 import history from './utils/history'
@@ -25,6 +26,7 @@ const App = () => {
             <Header />
             <main className='py-3'>
                 <Container>
+                    <Route path='/payment' component={PaymentScreen} />
                     <Route path='/shipping' component={ShippingScreen} />
                     <Route path='/register' component={RegisterScreen} />
                     <Route path='/profile' component={ProfileScreen} />
