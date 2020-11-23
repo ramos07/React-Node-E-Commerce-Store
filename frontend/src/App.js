@@ -14,13 +14,18 @@ import CartScreen from './screens/Cart'
 import LoginScreen from './screens/Login'
 import RegisterScreen from './screens/Register'
 import ProfileScreen from './screens/Profile'
+import ShippingScreen from './screens/Shipping'
+
+// History
+import history from './utils/history'
 
 const App = () => {
     return (
-        <Router>
+        <Router history={history}>
             <Header />
             <main className='py-3'>
                 <Container>
+                    <Route path='/shipping' component={ShippingScreen} />
                     <Route path='/register' component={RegisterScreen} />
                     <Route path='/profile' component={ProfileScreen} />
                     <Route path='/login' component={LoginScreen} />
