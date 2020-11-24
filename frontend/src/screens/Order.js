@@ -39,7 +39,7 @@ const Order = ({ match }) => {
         if (!order || order._id !== orderId) {
             dispatch(getOrderDetails(orderId))
         }
-    }, [dispatch, orderId])
+    }, [dispatch, orderId, order])
 
     if (typeof order !== 'undefined') {
         console.log(order)
