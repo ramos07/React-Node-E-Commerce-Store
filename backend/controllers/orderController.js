@@ -1,4 +1,4 @@
-import Order from '../models/oderModel.js'
+import Order from '../models/orderModel.js'
 import asyncHandler from 'express-async-handler' // Middleware to handle exceptions inside async express routes
 
 // @desc Create a new order
