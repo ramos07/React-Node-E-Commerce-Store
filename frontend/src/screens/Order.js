@@ -58,7 +58,7 @@ const Order = ({ match, history }) => {
             document.body.appendChild(script)
         }
 
-        if (!order || successPay) {
+        if (!order || successPay || order._id !== orderId) {
             dispatch({ type: ORDER_PAY_RESET })
             dispatch(getOrderDetails(orderId))
         } else if (!order.isPaid) {
@@ -68,10 +68,6 @@ const Order = ({ match, history }) => {
                 setSdkReady(true)
             }
         }
-
-        // if (!order || order._id !== orderId) {
-        //     dispatch(getOrderDetails(orderId))
-        // }
     }, [dispatch, orderId, order, successPay])
 
     const successPaymentHandler = (paymentResult) => {
