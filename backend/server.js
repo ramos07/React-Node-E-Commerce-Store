@@ -4,6 +4,7 @@ import connectDB from './config/db.js'
 import colors from 'colors'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 // Initialize config file
@@ -25,6 +26,8 @@ app.get('/', (req, res) => {
 app.use('/api/products', productRoutes)
 // User routes
 app.use('/api/users', userRoutes)
+// Order routes
+app.use('/api/orders', orderRoutes)
 
 // Error handling middleware
 app.use(notFound)
