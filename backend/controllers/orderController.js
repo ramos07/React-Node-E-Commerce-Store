@@ -56,4 +56,33 @@ const getOrderById = asyncHandler(async (req, res) => {
     }
 })
 
-export { addOrderItems, getOrderById }
+// @desc Update order to paid
+// @route PUT /api/orders/:id/pay
+// @access Private
+const updateOrderToPaid = asyncHandler(async (req, res) => {
+    // Get order from DB
+    const order = await Order.findById(req.params.id)
+
+    // if order exists update the fields else throw error
+    if (order) {
+        order.isPaid = true
+        order.paidAt = Date.now()
+        order.paymentResult = {
+            id: req.body.id,
+            status: req.body.status,
+            update_time: req.body.update_time,
+            email_address: req.body.payer.email_address,
+        }
+
+        // Save the updated order in the DB
+        const updatedOrder = await order.save()
+
+        // Send back updated order
+        res.json(updatedOrder)
+    } else {
+        res.status(404)
+        throw new Error('Could not update order')
+    }
+})
+
+export { addOrderItems, getOrderById, updateOrderToPaid }
