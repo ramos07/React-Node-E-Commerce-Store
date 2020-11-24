@@ -65,7 +65,7 @@ export const getOrderDetails = (orderId) => async (dispatch, getState) => {
         }
 
         // Make request to server and get the response data
-        const { data } = await axios.get(`/api/orders${orderId}`, config)
+        const { data } = await axios.get(`/api/orders/${orderId}`, config)
 
         // Dispatch user order success after making the request
         dispatch({
