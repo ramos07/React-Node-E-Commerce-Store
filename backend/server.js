@@ -29,6 +29,11 @@ app.use('/api/users', userRoutes)
 // Order routes
 app.use('/api/orders', orderRoutes)
 
+// Paypal routes
+app.use('/api/config/paypal', (req, res) =>
+    res.send(process.env.PAYPAL_CLIENT_ID)
+)
+
 // Error handling middleware
 app.use(notFound)
 app.use(errorHandler)
